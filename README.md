@@ -1,38 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br/>
 
-## Getting Started
+  <h1 align="center">Проект Currency-Change</h3>
 
-First, run the development server:
+  <p align="center">
+    Приложение 'Fullstack Разработчик'
+    <br/>
+    <br/>
+   
+  </p>
+  
+  <p align="center">
+    Для работы приложения необходимо клонировать бэкенд из репозитория 
+     <a align="center" href="https://github.com/script696/next-team-frontend" target="_blank">API</a>
+    <br/>
+    <br/>
+   
+  </p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# О проекте
+<p >
+    <br/>
+</p>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![Screen Shot](https://github.com/script696/next-team-frontend/blob/main/src/assets/images/gh.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Приложение разработано по тестовому заданию:
+# Full-stack тестовое задание
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Тестовое задание:**
 
-## Learn More
+Задание рассчитано на 4-8 часов выполнения
 
-To learn more about Next.js, take a look at the following resources:
+**Back End**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Сервер на NodeJS должен работать в качестве файлового сервера (выдавать файлы для работы Frontend-части) и принимать/отдавать данные по API (3 эндпоинта):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. POST для добавления нового сообщения
+2. POST для отправки следующего числа и получения среднего между ним и предыдущим в ответ
+3. GET для получения информации обо всех предыдущих числах и расчётах
 
-## Deploy on Vercel
+**Front-End**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Две страницы:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Доска сообщений с рендером предыдущих на стороне сервера (SSR) и формой добавления нового сообщения.
+2. Средние числа. Ввод числа в простую форму, отправка запроса на сервер, получение среднего числа в ответ, вывод результата над предыдущими. Рендер на стороне клиента (CSR).
+
+На всех страницах стили - предельно простой легко читаемый минимализм. Без изысков. Адаптив не нужен, но информация должна помещаться на экране по умолчанию.
+
+**Страница Доска сообщений**
+
+- при входе на страницу сервер формирует и выдаёт HTML-разметку с включением данных уже полученных сообщений (на старте сервера там одно захардкоденное сообщение)
+- каждое сообщение на экране состоит из значений полей text и author
+- кроме прошлых сообщений на странице находится форма размещения нового сообщения c теми же полями и кнопкой "разместить сообщение"
+- при отправке сообщения выполняется обновление страницы после которого новое сообщение должно появиться рядом с предыдующими (первым или последним - в зависимости от порядка сортировки)
+- сервер может хранить сообщения в массиве в памяти и/или (необязательно) в файле
+
+**Страница Средние числа**
+
+- пользователь вводит число в форму, сам отмечает, если число отрицательное и/или дробное (например галочками)
+- при нажатии кнопки "отправить и получить среднее" выполняется отправка запроса к серверу на второй API-эндпоинт
+- запрос и обработка ответа на клиенте посредством JavaScript без перезагрузок страницы
+- сервер в ответ присылает предыдущее число, последнее принятое от пользователя и среднее между ними
+- клиент выводит их под формой новой строкой (из неё должно быть понятно, где что)
+- данные предыдущих расчётов сдвигаются вниз
+- при входе/обновлении страницы приходящая от сервера HTML-разметка не содержит данных о предыдующих расчётах...
+- сразу после построения DOMa клиент отправляет запрос на третий эндпоинт, по получении ответа на который под формой выводится история предыдущих присланных и вычисленных чисел
+
+**Обязательно**
+
+- сдача работы в виде ссылки на репозиторий на GitHub или аналог, убедительная история коммитов
+- все три страницы содержат ссылки для удобного перехода на две другие (и переход выполняется независимо от адреса локального или на хостинге) и на свой репозиторий проекта
+- сервер не должен падать при запросах на получение отсутствующих файлов или на непредусмотренные API-эндпоинты
+
+## Использованные технологии
+
+- React 
+- TypeScript
+- SCSS 
+- Синтаксис ES6
+- REST API
+- Mодульная архитектура
+
+## Установка
+
+## 1. Клонируйте репозиторий командой:
+
+### `git@github.com:script696/next-team-frontend.git`
+
+## 2. Установите пакеты командой:
+
+### `npm i`
+
+## 3. Доступные скрипты:
+
+### `npm run dev`
+
+Запуск приложения в режиме разработки.\
+Откройте [http://localhost:3000](http://localhost:3000) чтобы увидеть результат в браузере.
+
+Страница обновится автоматически при внесении изменений.
+
+## Авторы
+
+* **Никита Семенов** - *Web Developer* - [Никита Семенов](http://niksemenov.ru/) - **
