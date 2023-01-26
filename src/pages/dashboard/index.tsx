@@ -18,8 +18,16 @@ const Dashboard = ({ data }: DashboardProps) => {
       <div className={s.dashboard}>
         <h2 className={s.dashboard__title}>Доска сообщений</h2>
         <div className={s.dashboard__contentWrapper}>
-          <MessagesList />
-          <MessagesForm />
+          <section className={s.dashboard__messagesListWrapper}>
+            <h3 className={s.dashboard__messagesListWrapperTitle}>Сообщения</h3>
+            <MessagesList />
+          </section>
+          <section className={s.dashboard__messagesFormWrapper}>
+            <h3 className={s.dashboard__formWrapperTitle}>
+              Отправить сообщение
+            </h3>
+            <MessagesForm />
+          </section>
         </div>
       </div>
     </MessagesProvider>
