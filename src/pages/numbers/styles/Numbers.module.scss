@@ -1,9 +1,10 @@
 .numbers {background: #111213;
-  padding: 30px;
+  padding: 10px 30px 30px;
   min-height: 100%;
 
   &__title {text-align: center;
-    color: inherit;}
+    color: inherit;
+    margin: 0 0 15px;}
 
   &__contentWrapper {padding: 30px;
     border: 1px solid #a9a6a6;

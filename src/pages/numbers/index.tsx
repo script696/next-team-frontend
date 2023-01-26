@@ -1,4 +1,4 @@
-import s from "./styles/Dashboard.module.scss";
+import s from "./styles/Numbers.module.scss";
 import { NumbersForm, NumbersList, NumbersProvider } from "@/modules/numbers";
 
 const Numbers = () => {

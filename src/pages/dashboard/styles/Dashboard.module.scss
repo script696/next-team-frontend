@@ -1,5 +1,5 @@
 .dashboard {background: #111213;
-  padding: 30px;
+  padding: 10px 30px 30px;
   min-height: 100%;
 
   &__messagesListWrapper {width: 100%;
@@ -27,7 +27,8 @@
     background: #fff;}
 
   &__title {text-align: center;
-    color: inherit;}
+    color: inherit;
+    margin: 0 0 15px;}
 
   &__messagesSection,&__formSection {width: 100%;
     padding: 30px;
