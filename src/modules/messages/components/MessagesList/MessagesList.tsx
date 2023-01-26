@@ -5,23 +5,20 @@ const MessagesList = () => {
   const { messagesData } = useMessagesContext();
 
   return (
-    <section className={s.messagesList}>
-      <h3 className={s.messagesList__title}>Сообщения</h3>
-      <ul className={s.messagesList__wrapper}>
-        <li className={s.messagesList__row}>
-          <span className={s.messagesList__item}>Author</span>
-          <span className={s.messagesList__item}>Text</span>
-        </li>
-        {messagesData.map(({ id, author, message }) => {
-          return (
-            <li key={id} className={s.messagesList__row}>
-              <span className={s.messagesList__item}>{author}</span>
-              <span className={s.messagesList__item}>{message}</span>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+    <ul className={s.messagesList__wrapper}>
+      <li className={s.messagesList__row}>
+        <span className={s.messagesList__item}>Author</span>
+        <span className={s.messagesList__item}>Text</span>
+      </li>
+      {messagesData.map(({ id, author, message }) => {
+        return (
+          <li key={id} className={s.messagesList__row}>
+            <span className={s.messagesList__item}>{author}</span>
+            <span className={s.messagesList__item}>{message}</span>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
