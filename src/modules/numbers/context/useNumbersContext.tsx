@@ -1,31 +1,21 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import {
-  Message,
-  MessageArray,
-  MessagesFormValues,
-} from "@/modules/messages/types/messages.typedef";
-import { fetchCreateNewMessage } from "@/modules/messages";
-import { Axios, AxiosResponse } from "axios";
+import { createContext, ReactNode, useContext, useState } from "react";
+
+import { AxiosResponse } from "axios";
 import {
   CheckboxesFormValues,
   NumberCalculation,
   NumberCalculationArray,
   NumbersFormValues,
-} from "@/modules/numbers";
-import { fetchCalculateNewAverage } from "@/modules/numbers/services/fetchCalculateNewAverage";
-import { types } from "sass";
-import Number = types.Number;
-import { Calculation } from "@/modules/numbers/types/numbers.typedef";
-import { fetchGetAllCalculations } from "@/modules/numbers/services/fetchGetAllCalculations";
+} from "../types/numbers.typedef";
+import { fetchCalculateNewAverage } from "../services/fetchCalculateNewAverage";
+import { fetchGetAllCalculations } from "../services/fetchGetAllCalculations";
 
 type NumbersFlowContextModel = {
   numbersData: NumberCalculationArray | undefined;
+  onCalculateNewAverage: (
+    numbersFormValues: NumbersFormValues,
+    checkboxesFormValues: CheckboxesFormValues
+  ) => void;
   updateNumbersData: () => void;
 };
 
@@ -38,7 +28,7 @@ type NumbersProviderProps = {
 };
 
 export const NumbersProvider = ({ children }: NumbersProviderProps) => {
-  const [numbersData, setNumbersData] = useState<[] | NumberCalculationArray>(
+  const [numbersData, setNumbersData] = useState<NumberCalculationArray | []>(
     []
   );
 
@@ -51,12 +41,14 @@ export const NumbersProvider = ({ children }: NumbersProviderProps) => {
       const { isInteger, isPositive } = checkboxesFormValues;
       const newCalculation: AxiosResponse<NumberCalculation> =
         await fetchCalculateNewAverage({
-          number: +number,
           isInteger,
           isPositive,
+          number: +number,
         });
 
-      setNumbersData((prev) => [...prev, newCalculation.data]);
+      setNumbersData((prev) => {
+        return [...prev, newCalculation.data];
+      });
     } catch (err) {
       console.error(err);
     }

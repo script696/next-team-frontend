@@ -1,5 +1,5 @@
 import s from "./NumbersList.module.scss";
-import { useNumbersContext } from "@/modules/numbers";
+import { useNumbersContext } from "../../context/useNumbersContext";
 import { useEffect } from "react";
 
 const NumbersList = () => {
@@ -18,7 +18,7 @@ const NumbersList = () => {
       {numbersData?.map(
         ({ id, previousAverage, currentNumber, currentAverage }) => {
           return (
-            <li key={id} className={s.numbersList__row}>
+            <li className={s.numbersList__row} key={id}>
               <span className={s.numbersList__item}>{previousAverage}</span>
               <span className={s.numbersList__item}>{currentNumber}</span>
               <span className={s.numbersList__item}>{currentAverage}</span>

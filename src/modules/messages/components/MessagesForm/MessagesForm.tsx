@@ -1,8 +1,7 @@
 import s from "./MessagesForm.module.scss";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Message, MessagesFormValues } from "../../types/messages.typedef";
+import { MessagesFormValues } from "../../types/messages.typedef";
 import {
-  MessagesFlowContext,
   useMessagesContext,
 } from "@/modules/messages/context/useMessagesContext";
 
@@ -20,26 +19,26 @@ const MessagesForm = () => {
 
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    setInputValues((prev) => ({ ...prev, [name]: value }));
+    setInputValues((prev) => {return { ...prev, [name]: value }});
   };
 
   return (
     <form className={s.messagesForm} onSubmit={handleSubmitForm}>
       <input
-        type="text"
-        placeholder="Автор"
         className={s.messagesForm__input}
         name="author"
-        value={inputValues.author}
         onChange={handleChangeInput}
+        placeholder="Автор"
+        type="text"
+        value={inputValues.author}
       />
       <input
-        type="text"
-        placeholder="Сообщение"
         className={s.messagesForm__input}
         name="message"
-        value={inputValues.message}
         onChange={handleChangeInput}
+        placeholder="Сообщение"
+        type="text"
+        value={inputValues.message}
       />
       <button className={s.messagesForm__submitBtn} type="submit">
         Отправить сообщение

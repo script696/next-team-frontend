@@ -1,10 +1,10 @@
 export const NAVIGATION_LINKS = [
   {
-    title: "Доска сообщений",
     path: "/dashboard",
+    title: "Доска сообщений",
   },
   {
-    title: "Средние числа",
     path: "/numbers",
+    title: "Средние числа",
   },
 ];

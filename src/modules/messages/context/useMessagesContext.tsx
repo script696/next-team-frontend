@@ -2,16 +2,15 @@ import {
   createContext,
   ReactNode,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import {
   Message,
   MessageArray,
   MessagesFormValues,
-} from "@/modules/messages/types/messages.typedef";
-import { fetchCreateNewMessage } from "@/modules/messages";
-import { Axios, AxiosResponse } from "axios";
+} from "../types/messages.typedef";
+import { fetchCreateNewMessage } from "../services/fetchCreateNewMessage";
+import { AxiosResponse } from "axios";
 
 type MessagesFlowContextModel = {
   messagesData: MessageArray;
@@ -39,7 +38,7 @@ export const MessagesProvider = ({
       const newMessageData: AxiosResponse<Message> =
         await fetchCreateNewMessage(messagesFormValues);
 
-      setMessagesData((prev) => [...prev, newMessageData.data]);
+      setMessagesData((prev) => {return [...prev, newMessageData.data]});
     } catch (err) {
       console.error(err);
     }
