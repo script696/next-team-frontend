@@ -1,6 +1,6 @@
 import { NumberCalculationArray } from "../types/numbers.typedef";
 import axios, { AxiosResponse } from "axios";
-import { NUMBERS_API_ROUTES } from "@/modules/numbers/services/routes";
+import { NUMBERS_API_ROUTES } from "../services/routes";
 
 export const fetchGetAllCalculations = async (): Promise<
   AxiosResponse<NumberCalculationArray>

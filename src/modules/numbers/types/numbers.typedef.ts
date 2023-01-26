@@ -1,19 +1,19 @@
 export type NumberCalculation = {
+  currentAverage: number;
+  currentNumber: number;
   id: number;
   previousAverage: number;
-  currentNumber: number;
-  currentAverage: number;
 };
 
 export type NumberCalculationArray = Array<NumberCalculation>;
 
 export type CheckboxesFormValues = {
-  isPositive: boolean;
   isInteger: boolean;
+  isPositive: boolean;
 };
 
 export type NumbersFormValues = {
-  number: string | number;
+  number: number | string;
 };
 
 export type Calculation = CheckboxesFormValues & { number: number };

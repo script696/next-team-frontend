@@ -1,1 +1,9 @@
-@import "~normalize.css";@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');*,*::before,*::after {  box-sizing: border-box;}html, body, #__next {  height: 100%;  color: #e7e3e3;  font-family: "Oswald", sans-serif;  font-weight: 400;}
+@import '~normalize.css';
+@import 'https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap';
+
+*,*::before,*::after { box-sizing: border-box;}
+
+html,body,#__next {height: 100%;
+  color: #e7e3e3;
+  font-family: Oswald, sans-serif;
+  font-weight: 400;}

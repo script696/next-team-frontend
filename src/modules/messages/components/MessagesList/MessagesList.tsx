@@ -12,7 +12,7 @@ const MessagesList = () => {
       </li>
       {messagesData.map(({ id, author, message }) => {
         return (
-          <li key={id} className={s.messagesList__row}>
+          <li className={s.messagesList__row} key={id}>
             <span className={s.messagesList__item}>{author}</span>
             <span className={s.messagesList__item}>{message}</span>
           </li>

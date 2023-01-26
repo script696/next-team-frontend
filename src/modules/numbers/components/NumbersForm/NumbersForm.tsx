@@ -1,10 +1,10 @@
 import s from "./NumbersForm.module.scss";
 import { FormEvent, useState } from "react";
 import {
-  useNumbersContext,
   CheckboxesFormValues,
   NumbersFormValues,
-} from "@/modules/numbers";
+} from "../../types/numbers.typedef";
+import { useNumbersContext } from "../../context/useNumbersContext";
 
 const NumbersForm = () => {
   const { onCalculateNewAverage } = useNumbersContext();
@@ -13,8 +13,8 @@ const NumbersForm = () => {
   });
 
   const [checkboxValues, setCheckboxValues] = useState<CheckboxesFormValues>({
-    isPositive: true,
     isInteger: true,
+    isPositive: true,
   });
 
   const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
@@ -24,41 +24,47 @@ const NumbersForm = () => {
 
   const handleChangeInput = (e: FormEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    setInputValues((prev) => ({ ...prev, [name]: value }));
+    setInputValues((prev) => {
+      return { ...prev, [name]: value };
+    });
   };
 
   const handleChangeCheckbox = (e: FormEvent<HTMLInputElement>) => {
     const { name, checked } = e.currentTarget;
-    setCheckboxValues((prev) => ({ ...prev, [name]: checked }));
+    setCheckboxValues((prev) => {
+      return { ...prev, [name]: checked };
+    });
   };
 
   return (
     <form className={s.form} onSubmit={handleSubmitForm}>
       <input
-        type="text"
-        placeholder="Число"
         className={s.form__input}
         name="number"
-        value={inputValues.number}
         onChange={handleChangeInput}
+        placeholder="Число"
+        type="text"
+        value={inputValues.number}
       />
       <div className={s.form__checkBoxWrapper}>
         <label className={s.form__checkLabel}>
           Положительное число
           <input
-            type="checkbox"
-            name="isPositive"
             checked={checkboxValues.isPositive}
+            className={s.form__checkbox}
+            name="isPositive"
             onChange={handleChangeCheckbox}
+            type="checkbox"
           />
         </label>
         <label className={s.form__checkLabel}>
           Целое число
           <input
-            type="checkbox"
-            name="isInteger"
             checked={checkboxValues.isInteger}
+            className={s.form__checkbox}
+            name="isInteger"
             onChange={handleChangeCheckbox}
+            type="checkbox"
           />
         </label>
       </div>

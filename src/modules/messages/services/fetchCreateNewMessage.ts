@@ -1,11 +1,6 @@
-import {
-  Message,
-  MessageArray,
-  MessagesFormValues,
-} from "@/modules/messages/types/messages.typedef";
+import { Message, MessagesFormValues } from "../types/messages.typedef";
 import axios, { AxiosResponse } from "axios";
-import { MESSAGES_API_ROUTES } from "@/modules/messages/services/routes";
-import { Calculation } from "@/modules/numbers/types/numbers.typedef";
+import { MESSAGES_API_ROUTES } from "./routes";
 
 export const fetchCreateNewMessage = async (
   messagesFormValues: MessagesFormValues

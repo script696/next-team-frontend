@@ -16,10 +16,10 @@ const Navigation = () => {
           return (
             <li key={path}>
               <Link
-                href={path}
                 className={
                   isLinkActive ? s.navigation__link_active : s.navigation__link
                 }
+                href={path}
               >
                 {title}
               </Link>

@@ -1,15 +1,6 @@
-import {
-  Message,
-  MessageArray,
-  MessagesFormValues,
-} from "@/modules/messages/types/messages.typedef";
 import axios, { AxiosResponse } from "axios";
-import { MESSAGES_API_ROUTES } from "@/modules/messages/services/routes";
-import { NUMBERS_API_ROUTES } from "@/modules/numbers/services/routes";
-import {
-  Calculation,
-  NumberCalculation,
-} from "@/modules/numbers/types/numbers.typedef";
+import { NUMBERS_API_ROUTES } from "../services/routes";
+import { Calculation, NumberCalculation } from "../types/numbers.typedef";
 
 export const fetchCalculateNewAverage = async (
   calculationFormValues: Calculation

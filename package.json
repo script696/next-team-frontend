@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "prettier --write . & npm run lint -- --fix & stylelint **/*.{css,scss} --fix"
   },
   "dependencies": {
     "@next/font": "13.1.5",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@typescript-eslint/parser": "5.40.1",
+    "@typescript-eslint/eslint-plugin": "5.20.0",
     "axios": "^1.2.1",
     "dotenv": "^16.0.3",
     "next": "13.1.5",
@@ -25,6 +28,16 @@
     "@svgr/webpack": "^6.5.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "prettier": "^2.8.3",
+    "eslint": "8.28.0",
+    "eslint-config-next": "12.3.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-sort-keys-fix": "1.1.2",
+    "eslint-plugin-typescript-sort-keys": "2.1.0",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard-scss": "^6.0.0",
     "saas": "^1.0.0"
   }
 }
