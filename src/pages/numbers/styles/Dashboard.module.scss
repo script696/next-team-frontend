@@ -1,1 +1,11 @@
-.numbers {  background: #111213;  padding: 30px;  min-height: 100%;  &__title {    text-align: center;    color: inherit;  }  &__contentWrapper{    padding: 30px;    border: 1px solid #a9a6a6;    border-radius: 15px;    background: #fff;  }}
+.numbers {background: #111213;
+  padding: 30px;
+  min-height: 100%;
+
+  &__title {text-align: center;
+    color: inherit;}
+
+  &__contentWrapper {padding: 30px;
+    border: 1px solid #a9a6a6;
+    border-radius: 15px;
+    background: #fff;}}

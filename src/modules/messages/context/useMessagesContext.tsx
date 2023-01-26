@@ -1,9 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useState,
-} from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 import {
   Message,
   MessageArray,
@@ -38,7 +33,9 @@ export const MessagesProvider = ({
       const newMessageData: AxiosResponse<Message> =
         await fetchCreateNewMessage(messagesFormValues);
 
-      setMessagesData((prev) => {return [...prev, newMessageData.data]});
+      setMessagesData((prev) => {
+        return [...prev, newMessageData.data];
+      });
     } catch (err) {
       console.error(err);
     }

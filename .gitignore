@@ -37,3 +37,9 @@ next-env.d.ts
 /.idea/prettier.xml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/.idea/next-team-frontend.iml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/jsLinters/eslint.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml

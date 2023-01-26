@@ -1,1 +1,16 @@
-.mainLayout {  min-height: 100%;  display: grid;  grid-template-columns: 200px repeat(2, 1fr);  grid-template-rows: 50px repeat(2, 1fr);  grid-template-areas:          "nav header header"          "nav main main"          "nav main main";  &__headerWrapper {    min-height: 100%;    grid-area: header;  }  &__navWrapper {    min-height: 100%;    grid-area: nav;  }  &__main {    min-height: 100%;    grid-area: main;  }}
+.mainLayout {min-height: 100%;
+  display: grid;
+  grid-template-columns: 200px repeat(2, 1fr);
+  grid-template-rows: 50px repeat(2, 1fr);
+  grid-template-areas: 'nav header header'
+    'nav main main'
+    'nav main main';
+
+  &__headerWrapper {min-height: 100%;
+    grid-area: header;}
+
+  &__navWrapper {min-height: 100%;
+    grid-area: nav;}
+
+  &__main {min-height: 100%;
+    grid-area: main;}}

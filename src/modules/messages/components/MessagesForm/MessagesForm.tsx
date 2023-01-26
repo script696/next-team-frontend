@@ -1,9 +1,7 @@
 import s from "./MessagesForm.module.scss";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { MessagesFormValues } from "../../types/messages.typedef";
-import {
-  useMessagesContext,
-} from "@/modules/messages/context/useMessagesContext";
+import { useMessagesContext } from "@/modules/messages/context/useMessagesContext";
 
 const MessagesForm = () => {
   const [inputValues, setInputValues] = useState<MessagesFormValues>({
@@ -19,7 +17,9 @@ const MessagesForm = () => {
 
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget;
-    setInputValues((prev) => {return { ...prev, [name]: value }});
+    setInputValues((prev) => {
+      return { ...prev, [name]: value };
+    });
   };
 
   return (

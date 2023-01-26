@@ -51,6 +51,7 @@ const NumbersForm = () => {
           Положительное число
           <input
             checked={checkboxValues.isPositive}
+            className={s.form__checkbox}
             name="isPositive"
             onChange={handleChangeCheckbox}
             type="checkbox"
@@ -60,6 +61,7 @@ const NumbersForm = () => {
           Целое число
           <input
             checked={checkboxValues.isInteger}
+            className={s.form__checkbox}
             name="isInteger"
             onChange={handleChangeCheckbox}
             type="checkbox"

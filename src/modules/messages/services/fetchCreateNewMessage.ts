@@ -1,7 +1,4 @@
-import {
-  Message,
-  MessagesFormValues,
-} from "../types/messages.typedef";
+import { Message, MessagesFormValues } from "../types/messages.typedef";
 import axios, { AxiosResponse } from "axios";
 import { MESSAGES_API_ROUTES } from "./routes";
 
