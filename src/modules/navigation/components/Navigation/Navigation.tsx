@@ -1,4 +1,4 @@
-import s from "./styles/Navigation.module.scss";
+import s from "./Navigation.module.scss";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { NAVIGATION_LINKS } from "@/modules/navigation/constants/constants";

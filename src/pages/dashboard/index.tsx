@@ -34,11 +34,14 @@ const Dashboard = ({ data }: DashboardProps) => {
   );
 };
 export async function getServerSideProps() {
-  const response: AxiosResponse<MessageArray> = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}${MESSAGES_API_ROUTES.base}${MESSAGES_API_ROUTES.getAll}`
-  );
-
-  return { props: { data: response.data } };
+  try {
+    const response: AxiosResponse<MessageArray> = await axios.get(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}${MESSAGES_API_ROUTES.base}${MESSAGES_API_ROUTES.getAll}`
+    );
+    return { props: { data: response.data } };
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export default Dashboard;
