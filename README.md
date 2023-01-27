@@ -17,16 +17,16 @@
    
   </p>
 
-
 # О проекте
+
 <p >
     <br/>
 </p>
 
 ![Screen Shot](https://github.com/script696/next-team-frontend/blob/main/src/assets/images/gh.png)
 
-
 Приложение разработано по тестовому заданию:
+
 # Full-stack тестовое задание
 
 **Тестовое задание:**
@@ -77,9 +77,9 @@
 
 ## Использованные технологии
 
-- React 
+- React
 - TypeScript
-- SCSS 
+- SCSS
 - Синтаксис ES6
 - REST API
 - Mодульная архитектура
@@ -105,4 +105,4 @@
 
 ## Авторы
 
-* **Никита Семенов** - *Web Developer* - [Никита Семенов](http://niksemenov.ru/) - **
+- **Никита Семенов** - _Web Developer_ - [Никита Семенов](http://niksemenov.ru/) - \*\*

@@ -1,18 +1,15 @@
-.dashboard {background: #111213;
+.dashboard {background: #415a77;
   padding: 10px 30px 30px;
   min-height: 100%;
 
-  &__messagesListWrapper {width: 100%;
+  &__messagesListWrapper,&__messagesFormWrapper {width: 100%;
     padding: 30px;
     border: 1px solid #a9a6a6;
     border-radius: 15px;
-    background: #fff;}
-
-  &__messagesFormWrapper {width: 100%;
-    padding: 30px;
-    border: 1px solid #a9a6a6;
-    border-radius: 15px;
-    background: #fff;}
+    background: #fff;
+    box-shadow: 0 0 10px 5px rgb(232 227 227 / 20%),
+      0 2px 2px 0 rgb(236 233 233 / 14%),
+      0 1px 5px 0 rgb(215 213 213 / 12%);}
 
   &__messagesListWrapperTitle,&__messagesFormWrapper {color: #000;
     text-align: center;}
