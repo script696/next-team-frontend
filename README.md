@@ -1,6 +1,6 @@
 <br/>
 
-  <h1 align="center">Проект Currency-Change</h3>
+  <h1 align="center">Проект Fullstack Разработчик</h3>
 
   <p align="center">
     Приложение 'Fullstack Разработчик'
